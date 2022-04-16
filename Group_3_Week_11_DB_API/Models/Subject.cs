@@ -9,16 +9,14 @@ namespace Group_3_Week_11_DB_API.Models
     {
         public Subject()
         {
-            Classes = new HashSet<Class>();
+            ClassSubjects = new HashSet<ClassSubject>();
         }
 
         public string SubjectId { get; set; }
-        public string ClassId { get; set; }
         public string SubjectCode { get; set; }
         public string SubjectName { get; set; }
         public string SubjectDescription { get; set; }
 
-        public virtual Class Class { get; set; }
-        public virtual ICollection<Class> Classes { get; set; }
+        public virtual ICollection<ClassSubject> ClassSubjects { get; set; }
     }
 }
