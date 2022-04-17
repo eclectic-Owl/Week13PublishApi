@@ -66,12 +66,12 @@ namespace Group_3_Week_11_DB_API.Data
                 entity.HasOne(d => d.Class)
                     .WithMany(p => p.ClassSubjects)
                     .HasForeignKey(d => d.ClassId)
-                    .HasConstraintName("FK__Class_Sub__Class__33D4B598");
+                    .HasConstraintName("FK__Class_Sub__Class__6C190EBB");
 
                 entity.HasOne(d => d.Subject)
                     .WithMany(p => p.ClassSubjects)
                     .HasForeignKey(d => d.SubjectId)
-                    .HasConstraintName("FK__Class_Sub__Subje__34C8D9D1");
+                    .HasConstraintName("FK__Class_Sub__Subje__6D0D32F4");
             });
 
             modelBuilder.Entity<Faculty>(entity =>
@@ -101,7 +101,7 @@ namespace Group_3_Week_11_DB_API.Data
             modelBuilder.Entity<FacultyClass>(entity =>
             {
                 entity.HasKey(e => e.FacultyClassesId)
-                    .HasName("PK__Faculty___3192B607CD1C59A9");
+                    .HasName("PK__Faculty___3192B6072556090B");
 
                 entity.ToTable("Faculty_Classes");
 
@@ -123,12 +123,12 @@ namespace Group_3_Week_11_DB_API.Data
                 entity.HasOne(d => d.Class)
                     .WithMany(p => p.FacultyClasses)
                     .HasForeignKey(d => d.ClassId)
-                    .HasConstraintName("FK__Faculty_C__Class__2C3393D0");
+                    .HasConstraintName("FK__Faculty_C__Class__6477ECF3");
 
                 entity.HasOne(d => d.Faculty)
                     .WithMany(p => p.FacultyClasses)
                     .HasForeignKey(d => d.FacultyId)
-                    .HasConstraintName("FK__Faculty_C__Facul__2D27B809");
+                    .HasConstraintName("FK__Faculty_C__Facul__656C112C");
             });
 
             modelBuilder.Entity<Student>(entity =>
@@ -158,7 +158,7 @@ namespace Group_3_Week_11_DB_API.Data
             modelBuilder.Entity<StudentSchedule>(entity =>
             {
                 entity.HasKey(e => e.ScheduleId)
-                    .HasName("PK__Student___9C8A5B69DB0383C5");
+                    .HasName("PK__Student___9C8A5B69EAB1A39F");
 
                 entity.ToTable("Student_Schedules");
 
@@ -184,12 +184,12 @@ namespace Group_3_Week_11_DB_API.Data
                 entity.HasOne(d => d.Class)
                     .WithMany(p => p.StudentSchedules)
                     .HasForeignKey(d => d.ClassId)
-                    .HasConstraintName("FK__Student_S__Class__300424B4");
+                    .HasConstraintName("FK__Student_S__Class__68487DD7");
 
                 entity.HasOne(d => d.Student)
                     .WithMany(p => p.StudentSchedules)
                     .HasForeignKey(d => d.StudentId)
-                    .HasConstraintName("FK__Student_S__Stude__30F848ED");
+                    .HasConstraintName("FK__Student_S__Stude__693CA210");
             });
 
             modelBuilder.Entity<Subject>(entity =>
