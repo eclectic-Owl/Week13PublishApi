@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Group_3_Week_11_DB_API.Data;
 using Group_3_Week_11_DB_API.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Group_3_Week_11_DB_API.Controllers
 {
@@ -23,6 +24,7 @@ namespace Group_3_Week_11_DB_API.Controllers
         }
 
         // GET: api/Faculties
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Faculty>>> GetFaculties()
         {
@@ -30,6 +32,7 @@ namespace Group_3_Week_11_DB_API.Controllers
         }
 
         // GET: api/Faculties/5
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<Faculty>> GetFaculty(string id)
         {
